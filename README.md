@@ -47,3 +47,7 @@ dasling was born out of necessity, cause similar projects exist, but typically n
 + open.sen.se
 + FHEM
 + ...
+
+Help needed?
+------------
++ Lost in git: git-scm.com/book
