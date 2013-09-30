@@ -35,6 +35,22 @@ Basically:
 + Install the dasling MQTTjs server 
     + Download the dasling [MQQTjs](github.com/dasling/MQTT.js) or better: git clone https://github.com/dasling/MQTT.js.git
     + Add credentials to examples/server/dasling.js
++ Install the hardware/equipment/...
+    + The use a FLM (see flukso.net) (instructions mostly from www.flukso.net/content/what-development-environment-best-compile)
+        + git clone https://github.com/dasling/flm02.git
+        + git submodule init
+        + git submodule update (if you have problems here, please set-up your github ssh keys coorectly)
+        + sudo apt-get update
+        + sudo apt-get install -y build-essential subversion git-core libncurses5-dev zlib1g-dev gawk flex quilt unzip gcc-avr avr-libc gdb-avr
+        + sudo apt-get install -y avra avrp avrdude
+        + cd ~/dasling/flm02
+        + mkdir ./bin
+        + cd openwrt
+        + ./install.sh ~/dasling/flm02/bin
+        + cd ~/dasling/flm02/bin/(whatever directory was made here)
+        + make -j8 V=99
+        + make sure the device is plugged in directly with a cross over cable and OFF. Not through a switch or router. When you see "Device detection in progress..", turn the device ON (plug power in) and it should be discovered in a few seconds and flashed in a couple of minutes.
+        + make flash V=99
 + Configure your devices/sensors/variables/actuators... in the Front-End
 + Check whether readings are stored in the DB
 + Write algorithms to perform calculations, and publish these to the dasling MQTTjs server
