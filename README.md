@@ -24,6 +24,13 @@ Basically:
     + sudo apt-get install nodejs (ubuntu), or http://nodejs.org/download/ (windows)
     + Download [dasling-FE](http://github.com/dasling/dasling-FE), and unzip the file, or even better: git clone https://github.com/dasling/dasling-FE.git
     + Enter in your database credentials in lib/config.js (need to match a user granted access on the DB, see steps below)
+    + If you're using git, then better use filters to change your password, like so:
+        + git config filter.password.clean "sed -e 's/your_password/@PASSWORD@/'"
+        + git config filter.password.smudge "sed -e 's//@PASSWORD@/your_password/'"
+        + make or edit .git/info/attributes to resemble:
+        ```
+        *.js filter=password
+        ```
 + Install the DB (script included in dasling-FE)
     + cd into the db directory
     + mysql -u root -p
