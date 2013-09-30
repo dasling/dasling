@@ -22,8 +22,7 @@ If you want to take it for a spin, well please do.
 Basically:
 + Install the Front-End (install nodejs and run dasling-FE)
     + sudo apt-get install nodejs (ubuntu), or http://nodejs.org/download/ (windows)
-    + Download [dasling-FE](http://github.com/dasling/dasling-FE) or even better: git clone https://github.com/dasling/dasling-FE.git
-    + Unzip the file 
+    + Download [dasling-FE](http://github.com/dasling/dasling-FE), and unzip the file, or even better: git clone https://github.com/dasling/dasling-FE.git
     + Enter in your database credentials in lib/config.js (need to match a user granted access on the DB, see steps below)
 + Install the DB (script included in dasling-FE)
     + cd into the db directory
