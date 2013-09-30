@@ -39,7 +39,11 @@ Basically:
     + USE perp_v1
     + source db_schema.sql
     + source db_inserts.sql
-    + if you don't want to use the root account than grant some user credentials to this database, see mysql user manual for details
+    + GRANT ALL ON perp_v1.* TO 'perpetual_pave'@'localhost'; # or whatever user you choose
+    + quit the mysql shell
+    + mysql -u perpetual_pave -p # or whatever user you choose, and check whether the following can be done:
+        + use perp_v1
+        + select * from statuses; # this should provide a couple of standard statuses
 + Install the dasling MQTTjs server 
     + Download the dasling [MQQTjs](github.com/dasling/MQTT.js) or better: git clone https://github.com/dasling/MQTT.js.git
     + Add credentials to examples/server/dasling.js
