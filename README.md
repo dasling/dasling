@@ -25,8 +25,8 @@ Basically:
     + Download [dasling-FE](http://github.com/dasling/dasling-FE), and unzip the file, or even better: git clone https://github.com/dasling/dasling-FE.git
     + Enter in your database credentials in lib/config.js (need to match a user granted access on the DB, see steps below)
     + If you're using git, then better use filters to change your password, like so:
-        + git config filter.password.clean "sed -e 's/your_password/@PASSWORD@/'"
-        + git config filter.password.smudge "sed -e 's//@PASSWORD@/your_password/'"
+        + git config filter.password.clean "sed -e 's/yourpassword/@PASSWORD@/'"
+        + git config filter.password.smudge "sed -e 's//@PASSWORD@/yourpassword/'"
         + make or edit .git/info/attributes to resemble:
         ```
         *.js filter=password
@@ -34,9 +34,11 @@ Basically:
 + Install the DB (script included in dasling-FE)
     + cd into the db directory
     + mysql -u root -p
-    + CREATE DATABASE perp_v1
+    + CREATE USER 'perpetual_pave'@'localhost' IDENTIFIED BY 'yourpassword'; #(or whatever user you want)
+    + CREATE DATABASE perp_v1;
     + USE perp_v1
     + source db_schema.sql
+    + source db_inserts.sql
     + if you don't want to use the root account than grant some user credentials to this database, see mysql user manual for details
 + Install the dasling MQTTjs server 
     + Download the dasling [MQQTjs](github.com/dasling/MQTT.js) or better: git clone https://github.com/dasling/MQTT.js.git
