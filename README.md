@@ -21,11 +21,11 @@ Install:
 If you want to take it for a spin, well please do.
 Basically:
 + Install the DB (script included in dasling-FE)
-  ++ Download [db_schema.sql](github.com/dasling/dasling-FE/tree/master/db)
-  ++ mysql -u root -p
-  ++ CREATE DATABASE perp_v1
-  ++ USE perp_v1
-  ++ source db_schema.sql
+    + Download [db_schema.sql](github.com/dasling/dasling-FE/tree/master/db)
+    + mysql -u root -p
+    + CREATE DATABASE perp_v1
+    + USE perp_v1
+    + source db_schema.sql
 + Install the Front-End (install nodejs and run dasling-FE)
 + Install the dasling MQTTjs server 
 + Configure your devices/sensors/variables/actuators... in the Front-End
