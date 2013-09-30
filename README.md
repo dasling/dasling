@@ -33,6 +33,9 @@ Basically:
         ```
     + cd dasling-FE
     + npm install mariasql # it's a dependancy, we'll be connecting to the DB
+    + npm install async
+    + npm install everyauth
+    + Make yourself a twitter account, cause you'll need it to authenticate yourself
 + Install the DB (script included in dasling-FE)
     + cd into the db directory
     + mysql -u root -p
