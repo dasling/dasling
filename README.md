@@ -70,6 +70,12 @@ Basically:
     + Run the dasling-FE
         + cd dasling-FE
         + node app.js
+        + surf to localhost:3000
+        + click on login -> authorize on twitter -> you should be send back to the application
+        + Unfortunately, the Front-End doesn't add you to an organization yet, so you'll need to:
+        + mysql -u perpetual_pave -p
+        + UPDATE users SET organization = 1 where user_id = 0;
+        + (The dasling FE code still needs to be altered to work with other organizations, so you'll have to specify "1" now ) 
 + Install the hardware/equipment/...
     + The use a FLM (see flukso.net) (instructions mostly from www.flukso.net/content/what-development-environment-best-compile)
         + git clone https://github.com/dasling/flm02.git
