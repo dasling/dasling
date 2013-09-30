@@ -44,8 +44,10 @@ Basically:
     + mysql -u perpetual_pave -p # or whatever user you choose, and check whether the following can be done:
         + use perp_v1
         + select * from statuses; # this should provide a couple of standard statuses
-+ Install the dasling MQTTjs server 
++ Install the dasling MQTTjs server
     + Download the dasling [MQQTjs](github.com/dasling/MQTT.js) or better: git clone https://github.com/dasling/MQTT.js.git
+    + cd MQTTjs
+    + npm install mariasql # it's a dependancy, since we'll be connecting to the DB often
     + Add credentials to examples/server/dasling.js
     + If you're using git, then better use filters to change your password, like so:
         + git config filter.password.clean "sed -e 's/yourpassword/@PASSWORD@/'"
