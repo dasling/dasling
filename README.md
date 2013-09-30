@@ -51,6 +51,7 @@ Basically:
         + make -j8 V=99
         + make sure the device is plugged in directly with a cross over cable and OFF. Not through a switch or router. When you see "Device detection in progress..", turn the device ON (plug power in) and it should be discovered in a few seconds and flashed in a couple of minutes.
         + make flash V=99 (if it complains about libpcap not found, then ap51-flash might be compiled for 32-bit. Better use open-mesh-flash-ng: Download it to /flm01/bin/flm02.x.x/tools/ ,then mv ap51-flash ap51-flash_32bit, then add a symlink to the new tool: ln -s ap51-flash open-mesh-flash-ng, finally chmod 755 open-mesh-flash-ng)
+        + (Working hard on these instructions, but my FLMv2B is still bricked, so only do this when you know what you're doing, etc...)
 + Configure your devices/sensors/variables/actuators... in the Front-End
 + Check whether readings are stored in the DB
 + Write algorithms to perform calculations, and publish these to the dasling MQTTjs server
