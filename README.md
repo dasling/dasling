@@ -32,6 +32,7 @@ Basically:
         *.js filter=password
         ```
     + cd dasling-FE
+    + sudo npm install -g jade # don't know why, but jade is better installed global
     + npm install mariasql # it's a dependancy, we'll be connecting to the DB
     + npm install async
     + npm install everyauth
