@@ -21,7 +21,7 @@ Install:
 If you want to take it for a spin, well please do.
 Basically:
 + Install the DB (script included in dasling-FE)
-    + Download [db_schema.sql](github.com/dasling/dasling-FE/tree/master/db)
+    + Download [db_schema.sql](http://github.com/dasling/dasling-FE/tree/master/db)
     + mysql -u root -p
     + CREATE DATABASE perp_v1
     + USE perp_v1
