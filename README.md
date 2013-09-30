@@ -47,6 +47,13 @@ Basically:
 + Install the dasling MQTTjs server 
     + Download the dasling [MQQTjs](github.com/dasling/MQTT.js) or better: git clone https://github.com/dasling/MQTT.js.git
     + Add credentials to examples/server/dasling.js
+    + If you're using git, then better use filters to change your password, like so:
+        + git config filter.password.clean "sed -e 's/yourpassword/@PASSWORD@/'"
+        + git config filter.password.smudge "sed -e 's//@PASSWORD@/yourpassword/'"
+        + make or edit .git/info/attributes to resemble:
+        ```
+        *.js filter=password
+        ```
 + Install the hardware/equipment/...
     + The use a FLM (see flukso.net) (instructions mostly from www.flukso.net/content/what-development-environment-best-compile)
         + git clone https://github.com/dasling/flm02.git
