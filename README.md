@@ -54,6 +54,14 @@ Basically:
         ```
         *.js filter=password
         ```
++ Start dasling:
+    + Run the mysql instance (if not automatically, if unsure, check in the processes: linux ps -A | grep -i mysql
+    + Run the MQTTjs server:
+        + cd MQQTjs/examples/server
+        + node dasling.js
+    + Run the dasling-FE
+        + cd dasling-FE
+        + node app.js
 + Install the hardware/equipment/...
     + The use a FLM (see flukso.net) (instructions mostly from www.flukso.net/content/what-development-environment-best-compile)
         + git clone https://github.com/dasling/flm02.git
