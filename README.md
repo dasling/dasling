@@ -22,15 +22,19 @@ If you want to take it for a spin, well please do.
 Basically:
 + Install the Front-End (install nodejs and run dasling-FE)
     + sudo apt-get install nodejs (ubuntu), or http://nodejs.org/download/ (windows)
-    + Download [dasling-FE](http://github.com/dasling/dasling-FE)
+    + Download [dasling-FE](http://github.com/dasling/dasling-FE) or even better: git clone https://github.com/dasling/dasling-FE.git
     + Unzip the file 
+    + Enter in your database credentials in lib/config.js (need to match a user granted access on the DB, see steps below)
 + Install the DB (script included in dasling-FE)
     + cd into the db directory
     + mysql -u root -p
     + CREATE DATABASE perp_v1
     + USE perp_v1
     + source db_schema.sql
+    + if you don't want to use the root account than grant some user credentials to this database, see mysql user manual for details
 + Install the dasling MQTTjs server 
+    + Download the dasling [MQQTjs](github.com/dasling/MQTT.js) or better: git clone https://github.com/dasling/MQTT.js.git
+    + Add credentials to examples/server/dasling.js
 + Configure your devices/sensors/variables/actuators... in the Front-End
 + Check whether readings are stored in the DB
 + Write algorithms to perform calculations, and publish these to the dasling MQTTjs server
