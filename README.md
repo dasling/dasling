@@ -31,6 +31,8 @@ Basically:
         ```
         *.js filter=password
         ```
+    + cd dasling-FE
+    + npm install mariasql # it's a dependancy, we'll be connecting to the DB
 + Install the DB (script included in dasling-FE)
     + cd into the db directory
     + mysql -u root -p
@@ -47,7 +49,7 @@ Basically:
 + Install the dasling MQTTjs server
     + Download the dasling [MQQTjs](github.com/dasling/MQTT.js) or better: git clone https://github.com/dasling/MQTT.js.git
     + cd MQTTjs
-    + npm install mariasql # it's a dependancy, since we'll be connecting to the DB often
+    + npm install mariasql # it's a dependancy, we'll be connecting to the DB
     + Add credentials to examples/server/dasling.js
     + If you're using git, then better use filters to change your password, like so:
         + git config filter.password.clean "sed -e 's/yourpassword/@PASSWORD@/'"
