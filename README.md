@@ -26,7 +26,7 @@ Basically:
     + Enter in your database credentials in lib/config.js (need to match a user granted access on the DB, see steps below)
     + If you're using git, then better use filters to change your password, like so:
         + git config filter.password.clean "sed -e 's/yourpassword/@PASSWORD@/'"
-        + git config filter.password.smudge "sed -e 's//@PASSWORD@/yourpassword/'"
+        + git config filter.password.smudge "sed -e 's/@PASSWORD@/yourpassword/'"
         + make or edit .git/info/attributes to resemble:
         ```
         *.js filter=password
@@ -49,7 +49,7 @@ Basically:
     + Add credentials to examples/server/dasling.js
     + If you're using git, then better use filters to change your password, like so:
         + git config filter.password.clean "sed -e 's/yourpassword/@PASSWORD@/'"
-        + git config filter.password.smudge "sed -e 's//@PASSWORD@/yourpassword/'"
+        + git config filter.password.smudge "sed -e 's/@PASSWORD@/yourpassword/'"
         + make or edit .git/info/attributes to resemble:
         ```
         *.js filter=password
