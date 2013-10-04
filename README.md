@@ -23,7 +23,8 @@ Basically:
 + Install the Front-End (install nodejs and run dasling-FE)
     ```
     # Install nodejs
-    sudo apt-get install nodejs (ubuntu), or http://nodejs.org/download/ (windows)
+    # if you don't have nodejs > 0.8, better download it from the nodejs website ! (and configure/make/make install it)
+    sudo apt-get install nodejs # (ubuntu), or http://nodejs.org/download/ (windows)
 
     # Install jade templating engine for nodejs
     sudo npm install -g jade # don't know why, but jade is better installed global
