@@ -52,19 +52,27 @@ Basically:
     
     ```
 + Install the DB (script included in dasling-FE)
-    + cd into the db directory
-    + mysql -u root -p
-    + CREATE USER 'perpetual_pave'@'localhost' IDENTIFIED BY 'yourpassword'; #(or whatever user you want)
-    + CREATE DATABASE perp_v1;
-    + USE perp_v1
-    + source db_schema.sql
-    + source db_inserts.sql
-    + source db_routines.sql
-    + GRANT ALL ON perp_v1.* TO 'perpetual_pave'@'localhost'; # or whatever user you choose
-    + quit the mysql shell
-    + mysql -u perpetual_pave -p # or whatever user you choose, and check whether the following can be done:
+    ```
+    # install mariaDB
+    # instructions at https://downloads.mariadb.org/mariadb/repositories/
+
+    # cd into the db directory
+    mysql -u root -p
+    
+    # at the maridb prompt do:
+    CREATE USER 'perpetual_pave'@'localhost' IDENTIFIED BY 'yourpassword'; #(or whatever user you want)
+    CREATE DATABASE perp_v1;
+    USE perp_v1
+    source db_schema.sql
+    source db_inserts.sql
+    source db_routines.sql
+    GRANT ALL ON perp_v1.* TO 'perpetual_pave'@'localhost'; # or whatever user you choose
+    
+    # quit the mariaDB shell
+    mysql -u perpetual_pave -p # or whatever user you choose, and check whether the following can be done:
         + use perp_v1
         + select * from statuses; # this should provide a couple of standard statuses
+    ```
 + Install the dasling MQTTjs server
     + Download the dasling [MQQTjs](github.com/dasling/MQTT.js) or better: git clone https://github.com/dasling/MQTT.js.git
     + cd MQTTjs
