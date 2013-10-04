@@ -21,23 +21,25 @@ Install:
 If you want to take it for a spin, well please do.
 Basically:
 + Install the Front-End (install nodejs and run dasling-FE)
-    + sudo apt-get install nodejs (ubuntu), or http://nodejs.org/download/ (windows)
-    + Download [dasling-FE](http://github.com/dasling/dasling-FE), and unzip the file, or even better: git clone https://github.com/dasling/dasling-FE.git
-    + Enter in your database credentials in lib/config.js (need to match a user granted access on the DB, see steps below)
-    + If you're using git, then better use filters to change your password, like so:
-        + git config filter.password.clean "sed -e 's/yourpassword/@PASSWORD@/'"
-        + git config filter.password.smudge "sed -e 's/@PASSWORD@/yourpassword/'"
-        + make or edit .git/info/attributes to resemble:
-        ```
-        *.js filter=password
-        ```
-    + cd dasling-FE
-    + sudo npm install -g jade # don't know why, but jade is better installed global
-    + npm install express
-    + npm install mariasql
-    + npm install async
-    + npm install everyauth
-    + Make yourself a twitter account, cause you'll need it to authenticate yourself
+    ```bash
+    sudo apt-get install nodejs (ubuntu), or http://nodejs.org/download/ (windows)
+    git clone https://github.com/dasling/dasling-FE.git # even bteer fork your own first
+    # Enter in your database credentials in lib/config.js (need to match a user granted access on the DB, see steps below)
+    #If you're using git, then better use filters to change your password, like so:
+    #    + git config filter.password.clean "sed -e 's/yourpassword/@PASSWORD@/'"
+    #    + git config filter.password.smudge "sed -e 's/@PASSWORD@/yourpassword/'"
+    #    + make or edit .git/info/attributes to resemble:
+    #    ```
+    #    *.js filter=password
+    #    ```
+    cd dasling-FE
+    sudo npm install -g jade # don't know why, but jade is better installed global
+    npm install express
+    npm install mariasql
+    npm install async
+    npm install everyauth
+    # Make yourself a twitter account, cause you'll need it to authenticate yourself
+    ```
 + Install the DB (script included in dasling-FE)
     + cd into the db directory
     + mysql -u root -p
