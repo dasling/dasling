@@ -22,9 +22,14 @@ If you want to take it for a spin, well please do.
 Basically:
 + Install the Front-End (install nodejs and run dasling-FE)
     ```
+    # Install nodejs
     sudo apt-get install nodejs (ubuntu), or http://nodejs.org/download/ (windows)
 
-    git clone https://github.com/dasling/dasling-FE.git # even bteer fork your own first
+    # Install jade templating engine for nodejs
+    sudo npm install -g jade # don't know why, but jade is better installed global
+    
+    # Clone dasling-FE, but even better clone your own fork
+    git clone https://github.com/dasling/dasling-FE.git 
     
     # Enter in your database credentials in lib/config.js (need to match a user granted access on the DB, see steps below)
     #If you're using git, then better use filters to change your password, like so:
@@ -34,13 +39,16 @@ Basically:
     #    ```
     #    *.js filter=password
     #    ```
+    
     cd dasling-FE
-    sudo npm install -g jade # don't know why, but jade is better installed global
+    
     npm install express
     npm install mariasql
     npm install async
     npm install everyauth
-    # Make yourself a twitter account, cause you'll need it to authenticate yourself
+    
+    # Now make yourself a twitter account, cause you'll need it to authenticate yourself
+    
     ```
 + Install the DB (script included in dasling-FE)
     + cd into the db directory
