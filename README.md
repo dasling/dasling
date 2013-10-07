@@ -28,7 +28,6 @@ Basically:
 
     # Install jade templating engine for nodejs
     sudo npm install -g jade # don't know why, but jade is better installed global
-    sudo npm install -g mariasql
     
     # Clone dasling-FE, but even better clone your own fork
     git clone https://github.com/dasling/dasling-FE.git 
@@ -38,6 +37,7 @@ Basically:
     npm install express
     npm install async
     npm install everyauth
+    npm install mariasql
     
     # Enter in your connection details in lib/config.js (need to match a user granted access on the DB, see steps below)
     cd dasling-FE/lib
@@ -73,16 +73,17 @@ Basically:
         + select * from statuses; # this should provide a couple of standard statuses
     ```
 + Install the dasling MQTTjs server
-    + Download the dasling [MQQTjs](github.com/dasling/MQTT.js) or better: git clone https://github.com/dasling/MQTT.js.git
-    + cd MQTTjs
-    + Add credentials to examples/server/dasling.js
-    + If you're using git, then better use filters to change your password, like so:
-        + git config filter.password.clean "sed -e 's/yourpassword/@PASSWORD@/'"
-        + git config filter.password.smudge "sed -e 's/@PASSWORD@/yourpassword/'"
-        + make or edit .git/info/attributes to resemble:
-        ```
-        *.js filter=password
-        ```
+    ```
+    # Download the dasling [MQQTjs](github.com/dasling/MQTT.js) or better: git clone
+    git clone https://github.com/dasling/MQTT.js.git
+     
+    # install dependencies 
+    cd dasling/MQTTjs
+    npm install mariasql
+
+    + Add credentials for database access
+    vi examples/server/dasling.js
+    ```
 + Start dasling:
     + Run the mysql instance (if not automatically, if unsure, check in the processes: linux ps -A | grep -i mysql
     + Run the MQTTjs server:
