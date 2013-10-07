@@ -42,10 +42,13 @@ Basically:
     # Enter in your connection details in lib/config.js (need to match a user granted access on the DB, see steps below)
     cd dasling-FE/lib
     cp config_template.js config.js
-    vi config.js
+    gedit config.js
     
     # Now make yourself a twitter account, cause you'll need it to authenticate yourself
-    (surf to http://twitter.com )
+    # surf to http://twitter.com
+    # You'll need a twitter application: make it at dev.twitter.com/apps
+    # Enter your consumerKey and consumerSecret in config.js
+    gedit config.js    
     
     ```
 + Install the DB (script included in dasling-FE)
@@ -124,7 +127,7 @@ Basically:
         ```
         *.py filter=password
         ```
-    + 
+     +
 + Configure te rest of your devices/sensors/variables/actuators... in the Front-End
 + Check whether readings are stored in the DB
 + Write algorithms to perform calculations, and publish these to the dasling MQTTjs server
