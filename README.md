@@ -28,27 +28,24 @@ Basically:
 
     # Install jade templating engine for nodejs
     sudo npm install -g jade # don't know why, but jade is better installed global
+    sudo npm install -g mariasql
     
     # Clone dasling-FE, but even better clone your own fork
     git clone https://github.com/dasling/dasling-FE.git 
     
-    # Enter in your database credentials in lib/config.js (need to match a user granted access on the DB, see steps below)
-    #If you're using git, then better use filters to change your password, like so:
-    #    + git config filter.password.clean "sed -e 's/yourpassword/@PASSWORD@/'"
-    #    + git config filter.password.smudge "sed -e 's/@PASSWORD@/yourpassword/'"
-    #    + make or edit .git/info/attributes to resemble:
-    #    ```
-    #    *.js filter=password
-    #    ```
-    
+    # Enter the dasling-FE directory, and install some necessary nodejs modules
     cd dasling-FE
-    
     npm install express
-    npm install mariasql
     npm install async
     npm install everyauth
     
+    # Enter in your connection details in lib/config.js (need to match a user granted access on the DB, see steps below)
+    cd dasling-FE/lib
+    cp config_template.js config.js
+    vi config.js
+    
     # Now make yourself a twitter account, cause you'll need it to authenticate yourself
+    (surf to http://twitter.com )
     
     ```
 + Install the DB (script included in dasling-FE)
@@ -56,27 +53,28 @@ Basically:
     # install mariaDB
     # instructions at https://downloads.mariadb.org/mariadb/repositories/
 
-    # cd into the db directory
-    mysql -u root -p
+    # cd into the dasling-FE/db directory
+    cd ./dasling-FE/db
     
-    # at the maridb prompt do:
-    CREATE USER 'perpetual_pave'@'localhost' IDENTIFIED BY 'yourpassword'; #(or whatever user you want)
-    CREATE DATABASE perp_v1;
-    USE perp_v1
+    # login as root into mariaDB, and setup the database:
+    mysql -u root -p
+    CREATE USER 'dasling'@'localhost' IDENTIFIED BY 'yourpassword'; #(or whatever user you want)
+    CREATE DATABASE dasling;
+    USE dasling
     source db_schema.sql
     source db_inserts.sql
     source db_routines.sql
-    GRANT ALL ON perp_v1.* TO 'perpetual_pave'@'localhost'; # or whatever user you choose
+    GRANT ALL ON dasling.* TO 'dasling'@'localhost'; # or whatever user you choose
+    quit
     
-    # quit the mariaDB shell
-    mysql -u perpetual_pave -p # or whatever user you choose, and check whether the following can be done:
-        + use perp_v1
+    # login as dasling user and check the database setup
+    mysql -u dasling -p # or whatever user you choose, and check whether the following can be done:
+        + use dasling
         + select * from statuses; # this should provide a couple of standard statuses
     ```
 + Install the dasling MQTTjs server
     + Download the dasling [MQQTjs](github.com/dasling/MQTT.js) or better: git clone https://github.com/dasling/MQTT.js.git
     + cd MQTTjs
-    + npm install mariasql # it's a dependancy, we'll be connecting to the DB
     + Add credentials to examples/server/dasling.js
     + If you're using git, then better use filters to change your password, like so:
         + git config filter.password.clean "sed -e 's/yourpassword/@PASSWORD@/'"
