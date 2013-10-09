@@ -160,3 +160,12 @@ Al this being open-source.
 Help needed with git?
 ------------
 + Lost in git: git-scm.com/book
+
+
+TODO:
+-----
++ Add log from MQTT to DB when things go wrong
++ Add webpage for this log to FE 
++ Add webpage with lastest 20 (or x) MQTT messages coming in/out/republished
++ Add filters to the webpage with latest MQTT messages
++ Add support for groups (need to think this one through before we can begin, needs invites, etc ...)
