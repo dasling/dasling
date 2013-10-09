@@ -18,7 +18,7 @@ dasling can be useful for a range of interesting stuff, e.g. interconnecting har
 Install:
 --------
 
-If you want to take it for a spin, well please do.
+If you want to take it for a spin, well please do (if you would like a docker file, give me a ring).
 Basically:
 + Install the Front-End (install nodejs and run dasling-FE)
     ```
@@ -153,6 +153,10 @@ dasling was born out of necessity, cause similar projects exist, but typically n
 + FHEM
 + ...
 
-Help needed?
+Difference: The intend is to have a dasling server at home which stores your info, and to publish/subscribe only those messages to a global dasling server which you don't mind to be public.
+Al this being open-source.
+
+
+Help needed with git?
 ------------
 + Lost in git: git-scm.com/book
