@@ -169,3 +169,7 @@ TODO:
 + Add webpage with lastest 20 (or x) MQTT messages coming in/out/republished
 + Add filters to the webpage with latest MQTT messages
 + Add support for groups (need to think this one through before we can begin, needs invites, etc ...)
+
+ISSUES:
+-------
++ On a fresh install, a 500 error is displayed (id = undefined) for all pages. Logout/login resolves this. 
