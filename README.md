@@ -164,7 +164,7 @@ Help needed with git?
 
 TODO:
 -----
-+ Add log from MQTT to DB when things go wrong
++ --DONE-- Add log from MQTT to DB when things go wrong
 + Add webpage for this log to FE 
 + Add webpage with lastest 20 (or x) MQTT messages coming in/out/republished
 + Add filters to the webpage with latest MQTT messages
