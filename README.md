@@ -34,10 +34,7 @@ Basically:
     
     # Enter the dasling-FE directory, and install some necessary nodejs modules
     cd dasling-FE
-    npm install express
-    npm install async
-    npm install everyauth
-    npm install mariasql
+    npm install
     
     # Enter in your connection details in lib/config.js (need to match a user granted access on the DB, see steps below)
     cd dasling-FE/lib
@@ -82,7 +79,7 @@ Basically:
      
     # install dependencies 
     cd dasling/MQTTjs
-    npm install mariasql
+    npm install
 
     + Add credentials for database access
     vi examples/server/dasling.js
@@ -97,8 +94,6 @@ Basically:
         + node app.js
         + surf to localhost:3000
         + click on login -> authorize on twitter -> you should be send back to the application
-        + Unfortunately, the Front-End doesn't add you to an organization yet, so you'll need to:
-        + mysql -u dasling -p
 + Install the hardware/equipment/...
     + The use a FLM (see flukso.net) (instructions mostly from www.flukso.net/content/what-development-environment-best-compile)
         + git clone https://github.com/dasling/flm02.git
@@ -116,6 +111,7 @@ Basically:
         + make sure the device is plugged in directly with a cross over cable and OFF. Not through a switch or router. When you see "Device detection in progress..", turn the device ON (plug power in) and it should be discovered in a few seconds and flashed in a couple of minutes.
         + make flash V=99 (if it complains about libpcap not found, then ap51-flash might be compiled for 32-bit. Better use open-mesh-flash-ng: Download it to /flm01/bin/flm02.x.x/tools/ ,then mv ap51-flash ap51-flash_32bit, then add a symlink to the new tool: ln -s ap51-flash open-mesh-flash-ng, finally chmod 755 open-mesh-flash-ng)
         + (Working hard on these instructions, but my FLMv2B is still bricked, so only do this when you know what you're doing, etc...)
+            + Presumably, Problems are related to me having a 64-bit linux (related to openmesh or libraries used by it) 
 + Check with a simple mqqt message whether this works
     + download the [examples algorithms](http://github.com/dasling/dasling-example-algorithms), or git clone https://github.com/dasling/dasling-example-algorithms.git
     + add a password filtering, watch out filtering now set on *.py files
@@ -126,14 +122,12 @@ Basically:
         *.py filter=password
         ```
      +
-+ Configure te rest of your devices/sensors/variables/actuators... in the Front-End
-+ Check whether readings are stored in the DB
++ Configure your devices/sensors/variables/actuators... in the Front-End
++ Check whether readings are stored in the DB (need to set store_in_DB field to '1' in Front-End for the variable)
 + Write algorithms to perform calculations, and publish these to the dasling MQTTjs server
 + Check whether these to are stored in the DB
 + Subscribe your actuators to the configured MQTT topics
 + Enjoy ...
-
-I'll add detailed instructions how to install dasling lateron.
 
 License:
 --------
@@ -163,7 +157,8 @@ Help needed with git?
 TODO:
 -----
 + --DONE-- Add log from MQTT to DB when things go wrong
-+ --DONE-- Add Attribute to "variable" specifying whether to store the reading/value in the DB 
++ --DONE-- Add Attribute to "variable" specifying whether to store the reading/value in the DB
++ Add group support (add sensors or variables to groups)
 + Add webpage for this log to FE 
 + Add webpage with lastest 20 (or x) MQTT messages coming in/out/republished
 + Add filters to the webpage with latest MQTT messages
