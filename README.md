@@ -30,7 +30,7 @@ Basically:
     sudo npm install -g jade # don't know why, but jade is better installed global
     
     # Clone dasling-FE, but even better clone your own fork
-    git clone https://github.com/dasling/dasling-FE.git 
+    git clone https://github.com/dasling/dasling-FE.git # if you don't have git then: sudo apt-get install git
     
     # Enter the dasling-FE directory, and install some necessary nodejs modules
     cd dasling-FE
