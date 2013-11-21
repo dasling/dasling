@@ -82,7 +82,9 @@ Basically:
     npm install
 
     + Add credentials for database access
-    vi examples/server/dasling.js
+    cd examples/server/
+    cp config_template.js config.js
+    
     ```
 + Start dasling:
     + Run the mysql instance (if not automatically, if unsure, check in the processes: linux ps -A | grep -i mysql
