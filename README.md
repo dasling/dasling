@@ -57,7 +57,7 @@ Basically:
     cd ./dasling-FE/db
     
     # login as root into mariaDB, and setup the database:
-    mysql -u root -p
+    mysql -u root -p # if you don't have mysql installed:  sudo apt-get install mysql-server
     CREATE USER 'dasling'@'localhost' IDENTIFIED BY 'yourpassword'; #(or whatever user you want)
     CREATE DATABASE dasling;
     USE dasling
