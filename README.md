@@ -64,7 +64,7 @@ Basically:
     source db_schema.sql
     source db_inserts.sql
     source db_routines.sql
-    GRANT ALL ON dasling.* TO 'dasling'@'localhost'; # or whatever user you choose
+    GRANT ALL ON dasling.* TO 'dasling'@'localhost';\G # or whatever user you choose
     quit
     
     # login as dasling user and check the database setup
