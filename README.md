@@ -65,7 +65,6 @@ Basically:
     source db_inserts.sql
     source db_routines.sql
     GRANT ALL ON dasling.* TO 'dasling'@'localhost';\G # or whatever user you choose
-    GRANT SUPER ON dasling.* TO dasling@'localhost';\G # needed if you use mysql workbench (at least for me it is)
     quit
     
     # login as dasling user and check the database setup
