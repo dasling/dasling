@@ -96,6 +96,7 @@ Basically:
         + node app.js
         + surf to localhost:3000
         + click on login -> authorize on twitter -> you should be send back to the application
+        + Click on devices, if dasling complains about not finding 'id' of 'undefined' then logout and login, that resolves this issue permanently.
 + Install the hardware/equipment/...
     + The use a FLM (see flukso.net) (instructions mostly from www.flukso.net/content/what-development-environment-best-compile)
         + git clone https://github.com/dasling/flm02.git
