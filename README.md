@@ -63,7 +63,7 @@ Basically:
     USE dasling
     source db_schema.sql
     source db_inserts.sql
-    source db_routines.sql
+    source db_routines.sql   #first change the definer in file db_routines.js to the DB user chosen in config.js (see above)
     GRANT ALL ON dasling.* TO 'dasling'@'localhost';\G # or whatever user you choose
     quit
     
